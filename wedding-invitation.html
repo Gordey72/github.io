@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гордей & Лада | Свадьба 29.07.2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color1: #f6e6e4;
+            --color2: #eabcb9;
+            --color3: #dbc3c4;
+            --color4: #807f6f;
+            --color5: #3e3b2e;
+            --light: #fff9f8;
+            --text: #3e3b2e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color2), var(--color3));
+            padding: 20px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.6;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            margin-bottom: 20px;
+            color: var(--light);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .names {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            animation: slideIn 1s ease-in-out;
+            flex-wrap: wrap;
+        }
+        
+        .name {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 500;
+            color: var(--light);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .ampersand {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--color1);
+            font-weight: 300;
+        }
+        
+        .date {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--light);
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .btn {
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-invite {
+            background-color: var(--color1);
+            color: var(--color5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-invite:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .details {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--color5);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, var(--color2), var(--color3));
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .info-title {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            margin-bottom: 12px;
+            color: var(--color4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .map-container {
+            height: 300px;
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .dress-code {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .dress-code-colors {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .color-sample {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dress-code-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
+            margin: 20px auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: block;
+        }
+        
+        .confirmation {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .confirmation-btn {
+            background-color: var(--color2);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .confirmation-btn:hover {
+            background-color: var(--color3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background-color: var(--color5);
+            color: var(--color1);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Оптимизации для мобильных */
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 500px;
+            }
+            
+            .info-card {
+                padding: 20px;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .gallery-item {
+                height: 150px;
+            }
+            
+            .color-sample {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Мы женимся!</h1>
+            <div class="names">
+                <div class="name">Гордей</div>
+                <div class="ampersand">&</div>
+                <div class="name">Лада</div>
+            </div>
+            <div class="date">29.07.2025 • 19:00 • Тюмень</div>
+            <button class="btn btn-invite">Подробности</button>
+        </div>
+    </section>
+    
+    <section class="details">
+        <h2 class="section-title">Детали мероприятия</h2>
+        
+        <div class="info-card">
+            <h3 class="info-title">📅 Дата и время</h3>
+            <p class="info-text">29 июля 2025 года</p>
+            <p class="info-text">Начало в 19:00</p>
+        </div>
+        
+        <div class="info-card">
+            <h3 class="info-title">📍 Место проведения</h3>
+            <p class="info-text">Luna event house</p>
+            <p class="info-text">Салаирский тракт 14 км, 7</p>
+            <p class="info-text">г. Тюмень</p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4317.229950975728!2d65.39792966358262!3d57.24615607877088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43bbfd214bfb7273%3A0xc0317cc0ac644bcd!2z0KDQtdGI0LXRgtC90LjQutC-0LLQsCwg0KLRjtC80LXQvdGB0LrQsNGPINC-0LHQuy4!5e0!3m2!1sru!2sru!4v1751810254240!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h3 class="info-title">💍 Церемония и банкет</h3>
+            <p class="info-text">19:00 - Начало празднования</p>
+            <p class="info-text">19:30 - Фуршет и банкет</p>
+            <p class="info-text">22:00-10:00 - Кайфуем до утра!</p>
+        </div>
+        
+        <div class="info-card">
+            <h3 class="info-title">👔 Дресс-код</h3>
+            <p class="info-text">Поддержите нашу пастельную цветовую гамму в своих нарядах</p>
+            
+            <div class="dress-code">
+                <div class="dress-code-colors">
+                    <div class="color-sample" style="background-color: #f6e6e4;"></div>
+                    <div class="color-sample" style="background-color: #eabcb9;"></div>
+                    <div class="color-sample" style="background-color: #dbc3c4;"></div>
+                    <div class="color-sample" style="background-color: #807f6f;"></div>
+                    <div class="color-sample" style="background-color: #3e3b2e;"></div>
+                </div>
+                
+                <!-- Замените этот src на ваше изображение -->
+                <img src="https://i.ibb.co/6c66S2Sq/photo-2025-07-06-18-24-57.jpg" 
+                     alt="Цветовая гамма свадьбы" 
+                     class="dress-code-image">
+                
+                <p class="info-text">Рекомендуемые цвета: нежно-персиковый, пудрово-розовый, теплый бежевый, оливковый, темно-коричневый</p>
+                <p class="info-text">Для мужчин: костюмы или рубашки в предложенной палитре</p>
+                <p class="info-text">Для женщин: платья пастельных тонов или элегантные костюмы, белое платье только у невесты!</p>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h3 class="info-title">📸 Наши моменты</h3>
+            <div class="gallery">
+                <!-- Замените эти изображения на ваши фото -->
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/V0rcW769/photo-2025-07-06-18-16-47.jpg" alt="Гордей и Лада">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/whdNVg5R/photo-2025-07-06-18-16-54.jpg" alt="Гордей и Лада">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/Vfxyg5V/photo-2025-07-06-18-17-01.jpg" alt="Гордей и Лада">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/q3n6gkH0/photo-2025-07-06-18-17-53.jpg" alt="Гордей и Лада">
+                </div>
+				<div class="gallery-item">
+                    <img src="https://i.ibb.co/hJChjQTG/photo-2025-07-06-18-17-39.jpg" alt="Гордей и Лада">
+                </div>
+				<div class="gallery-item">
+                    <img src="https://i.ibb.co/ZzhcJ8wk/photo-2025-07-06-18-17-48.jpg" alt="Гордей и Лада">
+                </div>
+				<div class="gallery-item">
+                    <img src="https://i.ibb.co/TqhhS80W/photo-2025-07-06-18-18-01.jpg" alt="Гордей и Лада">
+                </div>
+            </div>
+        </div>
+        
+        <div class="confirmation">
+    <h3 class="info-title">💌 Подтвердите участие</h3>
+    <p class="info-text">Пожалуйста, сообщите о вашем участии до 15 июля 2025 года</p>
+    
+    <form id="wedding-form" class="wedding-form" action="https://formspree.io/f/xeokwpzb" method="POST">
+        <input type="hidden" name="_subject" value="Новое подтверждение на свадьбу!">
+        
+        <div class="form-group">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Номер телефона:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67"
+                   pattern="^(\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$">
+            <span class="hint">Формат: +7 (XXX) XXX-XX-XX</span>
+        </div>
+        
+        <div class="form-group">
+            <label for="guests">Количество гостей:</label>
+            <select id="guests" name="guests">
+                <option value="1">Только я</option>
+                <option value="2">Я + 1</option>
+                <option value="3">Я + 2</option>
+                <option value="4">Я + 3</option>
+            </select>
+        </div>
+        
+        <input type="hidden" name="message" value="Подтверждение на свадьбу">
+        
+        <button type="submit" class="btn confirmation-btn">
+            <span class="btn-text">Я буду!</span>
+            <span class="icon">🎉</span>
+        </button>
+    </form>
+</div>
+
+<style>
+    /* Стили для формы */
+    .wedding-form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(234, 188, 185, 0.3);
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #3e3b2e;
+        font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #dbc3c4;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s;
+        background: #fff;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #eabcb9;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(234, 188, 185, 0.2);
+    }
+    
+    .form-group input.invalid {
+        border-color: #ff6b6b;
+    }
+    
+    .hint {
+        display: block;
+        font-size: 12px;
+        color: #807f6f;
+        margin-top: 5px;
+    }
+    
+    .confirmation-btn {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .btn-text {
+        transition: transform 0.3s;
+    }
+    
+    .confirmation-btn:hover .btn-text {
+        transform: translateX(5px);
+    }
+    
+    .icon {
+        font-size: 18px;
+        transition: transform 0.3s;
+    }
+    
+    .confirmation-btn:hover .icon {
+        transform: translateX(5px) rotate(15deg);
+    }
+    
+    /* Анимация при отправке */
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    .sending .btn-text {
+        display: none;
+    }
+    
+    .sending::after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease infinite;
+    }
+</style>
+
+<script>
+    // Валидация телефона
+    const phoneInput = document.getElementById('phone');
+    const form = document.getElementById('wedding-form');
+    
+    phoneInput.addEventListener('input', function(e) {
+        const value = e.target.value.replace(/\D/g, '');
+        let formattedValue = '';
+        
+        if (value.length > 0) {
+            formattedValue = '+7 (' + value.substring(1, 4);
+            if (value.length >= 4) formattedValue += ') ' + value.substring(4, 7);
+            if (value.length >= 7) formattedValue += '-' + value.substring(7, 9);
+            if (value.length >= 9) formattedValue += '-' + value.substring(9, 11);
+        }
+        
+        e.target.value = formattedValue;
+    });
+    
+    // Обработка отправки формы
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.classList.add('sending');
+        
+        // Отправка данных
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Спасибо! Мы получили ваше подтверждение.');
+                form.reset();
+            } else {
+                throw new Error('Ошибка отправки');
+            }
+        })
+        .catch(error => {
+            alert('Произошла ошибка. Пожалуйста, позвоните нам!');
+        })
+        .finally(() => {
+            btn.classList.remove('sending');
+        });
+    });
+</script>
